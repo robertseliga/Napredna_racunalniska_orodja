@@ -1,12 +1,12 @@
-%test
+
 function calc_pi()
     n=4000;
     r=1;
     [priblizek_pija, napaka] = area_pi(n);
    
     %[znotraj_kroga, znotraj_kvadrata] = mcc_pi(n)
-    disp(['Približek pija:', num2str(priblizek_pija)])
-    disp(['Odstopek:', num2str(napaka)])
+    disp(['Odstopek:', num2str(priblizek_pija)])
+    disp(['Približek pija:', num2str(napaka)])
     figure(n)
 end
 
@@ -32,7 +32,12 @@ function figure(n)
     hold on;
 
      % Izris loka 
-    plot(krog_x, krog_y, 'y', 'LineWidth', 2);  % Izris loka 
+    plot(krog_x, krog_y, 'y', 'LineWidth', 2);
+    title('Metoda Monte Carlo');
+    xlabel('x-koordinate točk');
+    ylabel('y-koordinate točk');
+    legend("znotraj kroga","zunaj kroga","krožnica","Location","best");
+    axis equal
     hold off;
 end
 
